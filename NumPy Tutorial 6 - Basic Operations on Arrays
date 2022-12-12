@@ -1,0 +1,40 @@
+# NumPy Tutorial 6 - Basic Operations on Arrays
+
+# Importing relevant modules
+import numpy as np
+
+# We can create an array between nubers like we can do with
+# lists and the "range" command
+# When using arrays we use the "arange" command
+
+one_dim = np.arange(1, 6)
+print(one_dim)
+# This will produce from n to n-1
+two_dim = np.arange(1, 10).reshape(3, 3)
+print(two_dim)
+three_dim = np.arange(1, 28).reshape(3, 3, 3)
+print(three_dim)
+
+a = np.arange(1, 6)
+b = np.arange(6, 11)
+# a and b have same size 6-1 = 11-6 = 5 elements
+
+# Adding
+print(a + b)
+# Subtracting
+print(b - a)
+# Square all the elements in the array 'a'
+print(a**2) # This is not matrix multiplication
+print(a**3)
+
+# NumPy has its own functions built in
+print(np.sqrt(a))
+print(np.sqrt(b))
+
+# Multiplying everything in 'a' by 3
+print(a*3)
+
+# testing whether values in an array are less than a given va;ue
+c = np.array([1, 2, 3, 4])
+print(c < 2)    # Gives an array of booleans
+# [ True False False False]
