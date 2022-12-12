@@ -1,0 +1,28 @@
+# NumPy Tutorial 9 - Joining and Splitting Arrays
+# Importing relevant modules
+import numpy as np
+
+# Joining arrays
+# Create two one dimensional arrays
+array1 = np.arange(1, 6)
+array2 = np.arange(6, 11)
+
+# Concatenating/join these two arrays together
+joined_array = np.concatenate((array1, array2)) # Two small brackets
+print(joined_array)
+
+# Join arrays along rows
+array3 = np.arange(1,7).reshape(2, 3)   # [[1 2 3] [4 5 6]]
+array4 = np.arange(7,13).reshape(2, 3)  # [[ 7  8  9] [10 11 12]]
+joined_row_array = np.concatenate((array3, array4),axis=1)
+print(joined_row_array)
+joined_colum_array = np.concatenate((array3, array4),axis=0)
+print(joined_colum_array)
+
+# Splitting arrays
+arr = np.arange(1, 7)
+split_array = np.array_split(arr,3)
+print(split_array)
+
+for i in range(len(split_array)):
+    print(split_array[i])
