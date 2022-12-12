@@ -1,0 +1,26 @@
+# NumPy Tutorial 8 - Iterating Arrays
+# Importing relevant modules
+import numpy as np
+
+one_dim = np.arange(1, 6)  # [1 2 3 4 5]
+
+for element in one_dim:
+    print(element)
+two_dim = np.arange(1, 7).reshape(2, 3)  # [1 2 3] [4 5 6}
+
+for element in two_dim:
+    print(element)
+# This prints each 1-D element in 2-D array
+for element in two_dim:
+    for number in element:
+        print(number)
+# This prints each element in each 1-D element in 2-D array
+
+# Using 'ndITER'
+# Really handy way of iterating without lot of for loops
+for element in np.nditer(two_dim):
+    print(element)
+
+# Figuring out the index
+for index, element in np.ndenumerate(two_dim):
+    print(index, element)
