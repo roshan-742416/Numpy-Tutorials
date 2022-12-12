@@ -1,0 +1,25 @@
+# NumPy Tutorial 4 - View and Copy
+
+# Importing relevant modules
+import numpy as np
+
+one_dim = np.array([1, 2, 3, 4, 5])
+two_dim = np.array([[1, 2, 3], [1, 4, 9], [1, 8, 27]])
+three_dim = np.array([[[1, 2, 3], [1, 4, 9], [1, 8, 27]], [[4, 5, 6], [16, 25, 36], [64, 125, 216]]])
+
+# Copy
+copy = one_dim.copy()
+one_dim[0] = 10  # This changes 1 to 10(change of element)
+print(one_dim)  # This prints the array with element change
+print(copy)  # This prints the original array
+
+# View
+one_dim[0] = 1
+view = one_dim.view()
+one_dim[0] = 10
+print(one_dim)  # Prints element after change of element
+print(view)     # Prints same as changed array i.e. view also changed
+
+# Python to recall it's a copy or view
+print(view.base)    # This will return the array which changes
+print(copy.base)    # This will return "None"
