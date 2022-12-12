@@ -1,0 +1,40 @@
+# NumPy Tutorial 4 - Shaping and reshaping arrays
+
+# Importing relevant modules
+import numpy as np
+
+one_dim = np.array([1, 2, 3, 4, 5])
+two_dim = np.array([[1, 2, 3, 4], [1, 4, 9, 16], [1, 8, 27, 4]])
+three_dim = np.array([[[1, 2, 3], [1, 4, 9], [1, 8, 27]], [[4, 5, 6], [16, 25, 36], [64, 125, 216]]])
+
+# Shape of an array
+print(two_dim)
+print(two_dim.shape)
+# This will print (3, 4) because we have 3 elements
+# Which each have 4 numbers (elements)
+
+# new_two_dim = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11]])
+# print(new_two_dim.shape)    # This gives error because different number of elements
+
+# Reshaping arrays
+# Let's suppose we have an array of student's ages
+# 3 students of each age
+students = np.array([19, 19, 19, 20, 20, 20, 21, 21, 21])
+# We also have their average exam score over the year
+exam_score = np.array([57, 60, 65, 59, 63, 70, 65, 72, 75])
+# Splitting up the exam score
+exam_split = exam_score.reshape(3, 3)
+print(exam_split)
+print(len(students))
+# We can't reshape every single array
+# array.reshape(x,y) x*y = len(array)
+# you can also make them individual arrays too
+print(exam_score.reshape(9, 1))
+
+# We can reshape into three dimensional
+one_dim = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+three_dim = one_dim.reshape(2, 3, 2)
+print(three_dim)
+# This will take [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# Break it into two arrays each having 3 arrays
+# Each of those arrays having 3 elements
