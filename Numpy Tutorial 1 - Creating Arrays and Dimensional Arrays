@@ -1,0 +1,30 @@
+# Numpy Tutorial 1 - Creating Arrays and Dimensional Arrays
+# Importing Relevant Modules
+import numpy as np
+
+# Creating a simple array
+array = np.array([1, 2, 3, 4, 5])
+print(array)  # There are no commas in the print
+
+# Let's explore the different size dimensions
+# Zero dimensional Array
+zero_dim = np.array(3218967318962189)
+print(zero_dim)  # No square brackets
+one_dim = np.array([1, 2, 3])
+print(one_dim)
+two_dim = np.array([[1, 3, 9], [1, 9, 81]])  # Square brackets in square brackets
+print(two_dim)
+three_dim = np.array([[[1, 3, 9], [1, 9, 81]], [[7, 8, 9], [10, 11, 12]]])
+print(three_dim)
+
+# Finding the dimension of a given array
+print(three_dim.ndim)   # Prints dimension of given array
+print(two_dim.ndim)
+print(one_dim.ndim) # NDIM
+print(zero_dim.ndim)
+
+# Give an array any dimension you want!
+new_array = np.array(17, ndmin=5)   # ndMIN
+print(new_array)
+new_array2 = np.array([1, 2], ndmin=5)
+print(new_array2)
